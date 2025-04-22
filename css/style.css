@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+
+  .logo {
+    font-family: cursive;
+    font-size: 24px;
+    margin-right: 20px;
+    font-weight: bold;
+  }
+
+  .dropdown {
+    display: flex;
+    align-items: center;
+    border-radius: 16px;
+    padding: 8px 16px;
+    margin-right: 10px;
+    cursor: pointer;
+    color: #111;
+  }
+
+  .dropdown img {
+    width: 16px;
+    margin-right: 6px;
+  }
+
+  .search-bar {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    margin-right: 20px;
+    background-color: #f3f3f3;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #333;
+  }
+
+  .join-btn {
+    margin-left: 20px;
+    background-color: #111;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .ellipsis {
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+  }
+
+  .dropdown:hover {
+    background-color: #f3f3f3;
+  }
+
+ 
+  .join-btn:hover {
+    background-color: #333;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    .nav-items {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      background-color: white;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .hamburger {
+      display: block;
+    }
+  }
+
+  .dropdown-container:hover .dropdown-menu {
+    display: block;
+  }
+  .dropdown-container {
+    position: relative;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    padding: 10px 0;
+    min-width: 150px;
+  }
+
+  img {
+    width: 16px;
+    margin-right: 8px;
+  }
+  .hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .dropdown-menu > a {
+      text-decoration: none;
+      display: flex;
+      margin: 4px;
+      color: #333;
+      padding: 8px 12px;
+      border-radius: 16px;
+      cursor: pointer;
+    }
+
+    .dropdown-menu > a:hover {
+      background-color: #f3f3f3;
+    }
+  
+
+  
