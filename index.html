@@ -5,39 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Snippix</title>
   <link rel="stylesheet" href="./css/style.css">
-  <script href="./script/script.js"></script>
+  <script src="./script/script.js" defer></script>
 </head>
 <body>
 
-  <nav class="navbar">
+  <!-- Navigation -->
+  <nav id="navbar" class="navbar">
     <a href="#"><div class="logo" style="color: #111;">Snippix</div></a>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-    <div class="dropdown-container dropdown">
-      <div class="dropdown-button">
-        <img src="https://img.icons8.com/ios-glyphs/30/image.png" alt="Photos Icon" class="pimg"/>
-        Photos
-      </div>
-      <div class="dropdown-menu">
-        <a href="#">Protos</a>
-        <a href="#">Videos</a>
-      </div>
+
+    <!-- Hamburger Icon (Visible on Small Screens) -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 12h18M3 6h18M3 18h18"/>
+      </svg>
     </div>
-    
-    <input class="search-bar" type="text" placeholder="Search for free photos or videos" />
-    
+
+    <!-- Main Navigation Items -->
     <div class="nav-links">
       <div class="dropdown-container dropdown">
         <div class="dropdown-button">
-          Explore
+          <img src="https://img.icons8.com/ios-glyphs/30/image.png" alt="Photos Icon" class="pimg"/>
+          Photos
         </div>
         <div class="dropdown-menu">
-          <a href="#">Descover Photos</a>
-          <a href="#">Free Videos</a>
-          <a href="#">challanges</a>
+          <a href="#">Photos</a>
+          <a href="#">Videos</a>
         </div>
       </div>
+
+      <div class="dropdown-container dropdown">
+        <div class="dropdown-button">Explore</div>
+        <div class="dropdown-menu">
+          <a href="#">Discover Photos</a>
+          <a href="#">Free Videos</a>
+          <a href="#">Challenges</a>
+        </div>
+      </div>
+
       <a class="nav-btn dropdown" href="#"><span>License</span></a>
-      
+
       <div class="dropdown-container dropdown">
         <div class="dropdown-button">
           <span class="ellipsis dropdown">•••</span>
@@ -45,14 +51,33 @@
         <div class="dropdown-menu">
           <a href="#">Help</a>
           <a href="#">About</a>
-          <a href="#">FeedBack</a>
+          <a href="#">Feedback</a>
         </div>
       </div>
     </div>
-    
+
+    <input class="search-bar" type="text" placeholder="Search for free photos or videos" />
     <button class="join-btn">Join</button>
-    
   </nav>
+
+  <!-- Homepage Hero Section -->
+  <section class="hero">
+    <h1>Explore Stunning Free Photos & Videos</h1>
+    <p>Snippix is your go-to source for high-quality, free media. Perfect for any project.</p>
+    <button class="join-btn">Start Exploring</button>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Snippix. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
