@@ -33,10 +33,24 @@ function toggleMenu() {
   function displayPhotos(photos) {
     photoGrid.innerHTML = '';
     photos.forEach(photo => {
+      const link = document.createElement('a');
+      link.href = photo.url; // link to the photo on Pexels
+      link.target = '_blank'; // open in new tab
+      link.rel = 'noopener noreferrer';
+  
       const img = document.createElement('img');
       img.src = photo.src.medium;
       img.alt = photo.photographer;
-      photoGrid.appendChild(img);
+  
+      link.appendChild(img);
+      photoGrid.appendChild(link);
     });
   }
   
+const caption = document.createElement('p');
+caption.innerHTML = `Photo by <a href="${photo.photographer_url}" target="_blank">${photo.photographer}</a>`;
+link.appendChild(img);
+photoGrid.appendChild(link);
+photoGrid.appendChild(caption);
+
+img.loading = 'lazy';
