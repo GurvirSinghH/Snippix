@@ -238,3 +238,22 @@ a {
 .photo-grid img:hover {
   transform: scale(1.05);
 }
+
+.search-btn {
+  background-color: #111;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.search-btn:hover {
+  background-color: #333;
+}
+
+/* Optional: spacing for search bar and button */
+.search-bar {
+  margin-right: 10px;
+}
