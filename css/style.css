@@ -282,3 +282,20 @@ a {
 .join-btn-2:hover {
   background-color: #333;
 }
+
+#view-more-btn {
+  display:none; 
+  background-color: #111;
+  color: white;
+  margin: 20px auto; 
+  padding: 10px 20px; 
+  border-radius: 8px;
+  font-size: 16px; 
+  font-weight: bold;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+#view-more-btn:hover {
+  background-color: #333;
+}

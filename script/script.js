@@ -3,12 +3,20 @@ document.addEventListener('DOMContentLoaded', function () {
   const searchInput = document.querySelector('.search-bar');
   const searchButton = document.querySelector('.search-btn');
   const photoGrid = document.getElementById('photo-grid');
+  const viewMoreBtn = document.getElementById('view-more-btn');
+
+  let currentQuery = '';
+  let currentPage = 1;
+  const perPage = 15;
+  let totalResults = 0;
 
   searchInput.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
       const query = searchInput.value.trim();
       if (query) {
-        fetchPhotos(query);
+        currentQuery = query;
+        currentPage = 1;
+        fetchPhotos(currentQuery, currentPage);
       }
     }
   });
@@ -16,19 +24,34 @@ document.addEventListener('DOMContentLoaded', function () {
   searchButton.addEventListener('click', function () {
     const query = searchInput.value.trim();
     if (query) {
-      fetchPhotos(query);
+      currentQuery = query;
+      currentPage = 1;
+      fetchPhotos(currentQuery, currentPage);
     }
   });
 
-  function fetchPhotos(query) {
-    fetch(`https://api.pexels.com/v1/search?query=${query}&per_page=15`, {
+  viewMoreBtn.addEventListener('click', function () {
+    if (currentQuery) {
+      currentPage++;
+      fetchPhotos(currentQuery, currentPage, true);
+    }
+  });
+
+  function fetchPhotos(query, page, append = false) {
+    fetch(`https://api.pexels.com/v1/search?query=${query}&per_page=${perPage}&page=${page}`, {
       headers: {
         Authorization: API_KEY
       }
     })
     .then(response => response.json())
     .then(data => {
-      displayPhotos(data.photos);
+      totalResults = data.total_results || 0;
+      if (append) {
+        appendPhotos(data.photos);
+      } else {
+        displayPhotos(data.photos);
+      }
+      toggleViewMoreButton();
     })
     .catch(error => {
       console.error('Error fetching from Pexels:', error);
@@ -51,6 +74,32 @@ document.addEventListener('DOMContentLoaded', function () {
       link.appendChild(img);
       photoGrid.appendChild(link);
     });
+  }
+
+  function appendPhotos(photos) {
+    photos.forEach(photo => {
+      const link = document.createElement('a');
+      link.href = photo.url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+
+      const img = document.createElement('img');
+      img.src = photo.src.medium;
+      img.alt = photo.photographer;
+      img.loading = 'lazy';
+
+      link.appendChild(img);
+      photoGrid.appendChild(link);
+    });
+  }
+
+  function toggleViewMoreButton() {
+    const shownPhotos = photoGrid.children.length;
+    if (shownPhotos < totalResults) {
+      viewMoreBtn.style.display = 'block';
+    } else {
+      viewMoreBtn.style.display = 'none';
+    }
   }
 });
 
