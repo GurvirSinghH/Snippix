@@ -53,3 +53,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+// Add toggleMenu function to toggle "show" class on navbar for hamburger menu
+function toggleMenu() {
+  const navbar = document.getElementById('navbar');
+  if (navbar) {
+    navbar.classList.toggle('show');
+  }
+}

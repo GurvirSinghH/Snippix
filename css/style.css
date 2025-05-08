@@ -42,35 +42,13 @@ img {
   margin-right: 6px;
 }
 
-.search-bar {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  border-radius: 6px;
-  margin-right: 20px;
-  background-color: #f3f3f3;
-}
+
 
 .nav-links {
   display: flex;
   align-items: center;
   gap: 20px;
   color: #333;
-}
-
-.join-btn {
-  margin-left: 20px;
-  background-color: #111;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.join-btn:hover {
-  background-color: #333;
 }
 
 .ellipsis {
@@ -239,7 +217,58 @@ a {
   transform: scale(1.05);
 }
 
-.search-btn {
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  flex-wrap: nowrap;
+}
+
+.search-bar {
+  width: 200px;
+  min-width: 120px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #f3f3f3;
+}
+
+.search-btn, .join-btn {
+  background-color: #111;
+  width: 100px;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.search-btn:hover, .join-btn:hover {
+  background-color: #333;
+}
+
+/* Responsive fix: wrap vertically only if really needed */
+@media (max-width: 480px) {
+  .nav-actions {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .search-bar {
+    flex: 1 1 100%;
+    margin-bottom: 10px;
+  }
+
+  .search-btn, .join-btn {
+    flex: 1 1;
+    width: 100px;
+  }
+}
+.join-btn-2 {
   background-color: #111;
   color: white;
   padding: 10px 16px;
@@ -247,13 +276,9 @@ a {
   border: none;
   cursor: pointer;
   font-weight: bold;
+  white-space: nowrap;
 }
 
-.search-btn:hover {
+.join-btn-2:hover {
   background-color: #333;
-}
-
-/* Optional: spacing for search bar and button */
-.search-bar {
-  margin-right: 10px;
 }
