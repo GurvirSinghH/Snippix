@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Explore - Snippix</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./script/explore.js" defer></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f8f8;
+    }
+
+    .explore-header {
+      background-color: #111;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .explore-header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    .explore-grid {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .explore-grid img {
+      width: 100%;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .explore-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    .next-btn {
+      display: block;
+      background-color: #111;
+      color: white;
+      padding: 12px 24px;
+      margin: 30px auto 60px;
+      border-radius: 8px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .next-btn:hover {
+      background-color: #333;
+    }
+    .logo-btn {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  text-decoration: none;
+}
+
+.logo-text {
+  font-family: cursive;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+}
+  </style>
+</head>
+<body>
+    
+  <div class="explore-header">
+    <a href="index.html" class="logo-btn">
+        <div class="logo-text">Snippix</div>
+    </a>
+
+    <h1>Explore Snippix</h1>
+    <p>Browse trending free photos powered by Pexels</p>
+  </div>
+
+  <div class="explore-grid" id="explore-grid"></div>
+
+  <button class="next-btn" id="next-btn">Next</button>
+
+</body>
+</html>
