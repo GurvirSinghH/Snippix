@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Help - Snippix</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./script/script.js" defer></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="navbar" class="navbar">
+    <a href="index.html"><div class="logo" style="color: #111;">Snippix</div></a>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 12h18M3 6h18M3 18h18"/>
+      </svg>
+    </div>
+
+    <div class="nav-links">
+      <a class="nav-btn dropdown" href="index.html">Home</a>
+      <a class="nav-btn dropdown" href="licence.html">License</a>
+      <a class="nav-btn dropdown" href="help.html"><strong>Help</strong></a>
+    </div>
+
+    <div class="nav-actions">
+      <input class="search-bar" type="text" placeholder="Search help topics..." />
+      <button class="search-btn">Search</button>
+      <a href="sugnup.html"><button class="join-btn">Join</button></a>
+    </div>
+  </nav>
+
+  <!-- Help Content -->
+  <section class="hero">
+    <h1>How can we help you?</h1>
+    <p>Browse frequently asked questions and user guides to get started.</p>
+  </section>
+
+  <section class="gallery" style="max-width: 900px; margin: auto;">
+    <div class="photo-grid" style="display: flex; flex-direction: column; gap: 20px; text-align: left;">
+      
+      <div>
+        <h3>📷 How do I download media?</h3>
+        <p>Simply hover over any photo or video and click the download icon. You can choose the desired resolution before saving.</p>
+      </div>
+
+      <div>
+        <h3>🔍 Can I use media for commercial use?</h3>
+        <p>Yes, all content on Snippix is free for commercial and personal use. Please review our <a href="licence.html" style="color: #111; text-decoration: underline;">License</a> page for more information.</p>
+      </div>
+
+      <div>
+        <h3>💡 How do I give credit to creators?</h3>
+        <p>While not required, crediting the photographer or Snippix is appreciated. You can find creator info below each media item.</p>
+      </div>
+
+      <div>
+        <h3>🛠️ Having technical issues?</h3>
+        <p>Try refreshing the page, clearing your browser cache, or using another browser. Still stuck? <a href="mailto:support@snippix.com" style="color: #111; text-decoration: underline;">Contact us</a>.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Snippix. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </div>
+      <p style="text-align:center; font-size:14px;">Photos & Videos provided by <a href="https://www.pexels.com" target="_blank" style="color: rgb(95, 166, 228);">Pexels</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

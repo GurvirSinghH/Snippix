@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - Snippix</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./script/script.js" defer></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="navbar" class="navbar">
+    <a href="index.html"><div class="logo" style="color: #111;">Snippix</div></a>
+    <div class="hamburger" onclick="toggleMenu()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 12h18M3 6h18M3 18h18"/>
+      </svg>
+    </div>
+    <div class="nav-links">
+      <a class="nav-btn dropdown" href="index.html">Home</a>
+      <a class="nav-btn dropdown" href="licence.html">License</a>
+      <a class="nav-btn dropdown" href="help.html">Help</a>
+      <a class="nav-btn dropdown" href="about.html"><strong>About</strong></a>
+    </div>
+    <div class="nav-actions">
+      <input class="search-bar" type="text" placeholder="Search..." />
+      <button class="search-btn">Search</button>
+      <a href="sugnup.html"><button class="join-btn">Join</button></a>
+    </div>
+  </nav>
+
+  <!-- About Content -->
+  <section class="hero">
+    <h1>About Snippix</h1>
+    <p>Learn more about our mission and the people behind Snippix.</p>
+  </section>
+
+  <section class="gallery" style="max-width: 900px; margin: auto;">
+    <div style="text-align: left;">
+      <p><strong>Snippix</strong> is a free platform dedicated to helping creatives, developers, and designers access high-quality photos and videos for personal and commercial use.</p>
+      <p>We curate content from talented photographers and videographers and make it available without cost, licensing hurdles, or watermark restrictions.</p>
+      <p>Snippix is powered by the Pexels API and is continuously evolving to improve search, categorization, and user experience.</p>
+      <p>Our mission is to empower creators by removing barriers to high-quality visuals.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Snippix. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </div>
+      <p style="text-align:center; font-size:14px;">Photos & Videos provided by <a href="https://www.pexels.com" target="_blank" style="color: rgb(95, 166, 228);">Pexels</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

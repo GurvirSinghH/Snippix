@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feedback - Snippix</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./script/script.js" defer></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="navbar" class="navbar">
+    <a href="index.html"><div class="logo" style="color: #111;">Snippix</div></a>
+    <div class="hamburger" onclick="toggleMenu()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 12h18M3 6h18M3 18h18"/>
+      </svg>
+    </div>
+    <div class="nav-links">
+      <a class="nav-btn dropdown" href="index.html">Home</a>
+      <a class="nav-btn dropdown" href="licence.html">License</a>
+      <a class="nav-btn dropdown" href="help.html">Help</a>
+      <a class="nav-btn dropdown" href="feedback.html"><strong>Feedback</strong></a>
+    </div>
+    <div class="nav-actions">
+      <input class="search-bar" type="text" placeholder="Search..." />
+      <button class="search-btn">Search</button>
+      <a href="sugnup.html"><button class="join-btn">Join</button></a>
+    </div>
+  </nav>
+
+  <!-- Feedback Section -->
+  <section class="hero">
+    <h1>We Value Your Feedback</h1>
+    <p>Tell us how we can improve Snippix or what you love about it.</p>
+  </section>
+
+  <section class="gallery" style="max-width: 600px; margin: auto;">
+    <form style="display: flex; flex-direction: column; gap: 15px;">
+      <input type="text" placeholder="Your Name (optional)" class="search-bar" />
+      <input type="email" placeholder="Your Email (optional)" class="search-bar" />
+      <textarea placeholder="Your Feedback..." rows="6" style="padding: 10px; border-radius: 6px; border: 1px solid #ccc; resize: vertical;"></textarea>
+      <button type="submit" class="join-btn-2" style="align-self: flex-start;">Submit Feedback</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Snippix. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </div>
+      <p style="text-align:center; font-size:14px;">Photos & Videos provided by <a href="https://www.pexels.com" target="_blank" style="color: rgb(95, 166, 228);">Pexels</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
