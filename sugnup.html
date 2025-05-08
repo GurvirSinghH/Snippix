@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up - Snippix</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f8f8f8;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .signup-container {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .signup-container h2 {
+      margin-bottom: 20px;
+      color: #111;
+    }
+
+    .signup-container input {
+      width: 100%;
+      padding: 12px 14px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background-color: #f3f3f3;
+      font-size: 16px;
+    }
+
+    .signup-btn {
+      background-color: #111;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .signup-btn:hover {
+      background-color: #333;
+    }
+
+    .signup-container p {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .signup-container a {
+      color: #111;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .signup-container a:hover {
+      text-decoration: underline;
+    }
+
+    .logo-btn {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  text-decoration: none;
+}
+
+.logo-text {
+  font-family: cursive;
+  font-size: 24px;
+  font-weight: bold;
+  color: #111;
+}
+
+  </style>
+</head>
+<body>
+    <a href="index.html" class="logo-btn">
+        <div class="logo-text">Snippix</div>
+    </a>
+
+  <div class="signup-container">
+    <h2>Create Your Snippix Account</h2>
+    <form>
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Password" required />
+      <input type="password" placeholder="Confirm Password" required />
+      <button type="submit" class="signup-btn">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Login</a></p>
+  </div>
+
+</body>
+</html>
