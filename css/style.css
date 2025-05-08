@@ -42,8 +42,6 @@ img {
   margin-right: 6px;
 }
 
-
-
 .nav-links {
   display: flex;
   align-items: center;
@@ -200,6 +198,21 @@ a {
   text-align: center;
 }
 
+/* New responsive gallery container class */
+.responsive-gallery {
+  max-width: 900px;
+  margin: auto;
+  text-align: left;
+  padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+  .responsive-gallery {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+}
+
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -216,7 +229,6 @@ a {
 .photo-grid img:hover {
   transform: scale(1.05);
 }
-
 
 .nav-actions {
   display: flex;
