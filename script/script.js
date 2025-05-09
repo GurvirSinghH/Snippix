@@ -65,33 +65,43 @@ document.addEventListener('DOMContentLoaded', function () {
       link.href = photo.url;
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
-
+  
+      const container = document.createElement('div');
+      container.className = 'media-item'; // Apply uniform aspect ratio
+  
       const img = document.createElement('img');
       img.src = photo.src.medium;
       img.alt = photo.photographer;
       img.loading = 'lazy';
-
-      link.appendChild(img);
+  
+      container.appendChild(img);
+      link.appendChild(container);
       photoGrid.appendChild(link);
     });
   }
+  
 
-  function appendPhotos(photos) {
-    photos.forEach(photo => {
-      const link = document.createElement('a');
-      link.href = photo.url;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
+function appendPhotos(photos) {
+  photos.forEach(photo => {
+    const link = document.createElement('a');
+    link.href = photo.url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
 
-      const img = document.createElement('img');
-      img.src = photo.src.medium;
-      img.alt = photo.photographer;
-      img.loading = 'lazy';
+    const container = document.createElement('div');
+    container.className = 'media-item';
 
-      link.appendChild(img);
-      photoGrid.appendChild(link);
-    });
-  }
+    const img = document.createElement('img');
+    img.src = photo.src.medium;
+    img.alt = photo.photographer;
+    img.loading = 'lazy';
+
+    container.appendChild(img);
+    link.appendChild(container);
+    photoGrid.appendChild(link);
+  });
+}
+
 
   function toggleViewMoreButton() {
     const shownPhotos = photoGrid.children.length;
@@ -103,6 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+
 // Add toggleMenu function to toggle "show" class on navbar for hamburger menu
 function toggleMenu() {
   const navbar = document.getElementById('navbar');
@@ -110,3 +121,4 @@ function toggleMenu() {
     navbar.classList.toggle('show');
   }
 }
+

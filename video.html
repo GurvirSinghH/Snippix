@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Free Videos - Snippix</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./script/videos.js" defer></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar">
+    <a href="index.html"><div class="logo" style="color: #111;">Snippix</div></a>
+    <div class="hamburger" onclick="toggleMenu()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 12h18M3 6h18M3 18h18"/>
+      </svg>
+    </div>
+
+    <div class="nav-links">
+      <a class="nav-btn dropdown" href="index.html">Home</a>
+      <a class="nav-btn dropdown" href="index.html">Photos</a>
+      <a class="nav-btn dropdown" href="videos.html"><strong>Videos</strong></a>
+      <a class="nav-btn dropdown" href="help.html">Help</a>
+    </div>
+
+    <div class="nav-actions">
+      <input class="search-bar" type="text" id="searchInput" placeholder="Search free videos..." />
+      <button class="search-btn" onclick="searchVideos()">Search</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Explore Free Stock Videos</h1>
+    <p>Browse high-quality, royalty-free videos for your creative projects.</p>
+  </section>
+
+  <!-- Video Grid -->
+  <section class="gallery">
+    <h2>Search Results</h2>
+    <div id="video-grid" class="photo-grid"></div>
+    <button id="view-more-btn" onclick="loadMoreVideos()">View More</button>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Snippix. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <p style="text-align:center; font-size:14px;">Videos provided by <a href="https://www.pexels.com" target="_blank" style="color: rgb(95, 166, 228);">Pexels</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
