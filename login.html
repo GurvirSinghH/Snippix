@@ -6,13 +6,13 @@
   <title>Login - Snippix</title>
   <link rel="stylesheet" href="./css/style.css">
   <style>
-    body {
+    .main-content {
       display: flex;
       justify-content: center;
       align-items: center;
       background-color: #f8f8f8;
-      height: 100vh;
-      margin: 0;
+      min-height: calc(100vh - 150px);
+      padding: 40px 0;
     }
 
     .login-container {
@@ -73,36 +73,90 @@
       text-decoration: underline;
     }
 
-    .logo-btn {
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  text-decoration: none;
-}
 
-.logo-text {
-  font-family: cursive;
-  font-size: 24px;
-  font-weight: bold;
-  color: #111;
-}
 
   </style>
+  <script src="./script/script.js" defer></script>
 </head>
 <body>
-    <a href="index.html" class="logo-btn">
-        <div class="logo-text">Snippix</div>
-    </a>
+  <!-- Navigation -->
+  <nav id="navbar" class="navbar">
+    <a href="index.html"><div class="logo" style="color: #111;">Snippix</div></a>
 
-  <div class="login-container">
-    <h2>Login to Snippix</h2>
-    <form>
-      <input type="email" placeholder="Email" required />
-      <input type="password" placeholder="Password" required />
-      <button type="submit" class="login-btn">Login</button>
-    </form>
-    <p>Don't have an account? <a href="sugnup.html">Sign up</a></p>
+    <!-- Hamburger Icon (Visible on Small Screens) -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 12h18M3 6h18M3 18h18"/>
+      </svg>
+    </div>
+
+    <!-- Main Navigation Items -->
+    <div class="nav-links">
+      <div class="dropdown-container dropdown">
+        <div class="dropdown-button">
+          <img src="https://img.icons8.com/ios-glyphs/30/image.png" alt="Photos Icon" class="pimg"/>
+          Photos
+        </div>
+        <div class="dropdown-menu">
+          <a href="explore.html">Photos</a>
+          <a href="video.html">Videos</a>
+        </div>
+      </div>
+
+      <div class="dropdown-container dropdown">
+        <div class="dropdown-button">Explore</div>
+        <div class="dropdown-menu">
+          <a href="explore.html">Discover Photos</a>
+          <a href="video.html">Free Videos</a>
+          <a href="#">Challenges</a>
+        </div>
+      </div>
+
+      <a class="nav-btn dropdown" href="licence.html">License</a>
+
+      <div class="dropdown-container dropdown">
+        <div class="dropdown-button">
+          <span class="ellipsis dropdown">•••</span>
+        </div>
+        <div class="dropdown-menu">
+          <a href="help.html">Help</a>
+          <a href="about.html">About</a>
+          <a href="feedback.html">Feedback</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-actions">
+      <input class="search-bar" type="text" placeholder="Search for free photos or videos" />
+      <button class="search-btn">Search</button>
+      <a href="sugnup.html"><button class="join-btn">Join</button></a>
+    </div>
+  </nav>
+
+  <div class="main-content">
+    <div class="login-container">
+      <h2>Login to Snippix</h2>
+      <form>
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit" class="login-btn">Login</button>
+      </form>
+      <p>Don't have an account? <a href="sugnup.html">Sign up</a></p>
+    </div>
   </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Snippix. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <p style="text-align:center; font-size:14px;">Photos & Videos provided by <a href="https://www.pexels.com" target="_blank" style="color: rgb(95, 166, 228);">Pexels</a></p>
+    </div>
+  </footer>
 
 </body>
 </html>

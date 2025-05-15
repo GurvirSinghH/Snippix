@@ -1,3 +1,11 @@
+// Add toggleMenu function to toggle "show" class on navbar for hamburger menu
+function toggleMenu() {
+  const navbar = document.getElementById('navbar');
+  if (navbar) {
+    navbar.classList.toggle('show');
+  }
+}
+
 const API_KEY = 'wpffzYsobAQgu3rClJ3WDUVcd6wdTat1lK59TWBCiCQJeZhO8Cye0Wis';
 let page = 1;
 let query = '';
@@ -36,7 +44,7 @@ async function loadVideos() {
     const videoEl = createVideoElement(video);
     grid.appendChild(videoEl);
   });
-  
+
   if (videos.length > 0) {
     viewMoreBtn.style.display = 'block';
   }
