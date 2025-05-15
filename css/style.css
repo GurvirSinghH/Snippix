@@ -66,6 +66,31 @@ a {
   position: relative;
 }
 
+/* Dropdown button styling */
+.dropdown-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.dropdown-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-button .dropdown-icon {
+  margin-left: 4px;
+  transition: transform 0.2s;
+}
+
+.dropdown-button[aria-expanded="true"] .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+/* Dropdown menu styling */
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -75,22 +100,113 @@ a {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   border-radius: 6px;
   padding: 10px 0;
-  min-width: 150px;
+  min-width: 180px;
   z-index: 1000;
+  transition: opacity 0.2s, transform 0.2s;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .dropdown-menu > a {
   text-decoration: none;
   display: flex;
+  align-items: center;
+  gap: 8px;
   margin: 4px;
   color: #333;
   padding: 8px 12px;
-  border-radius: 16px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
 }
 
 .dropdown-menu > a:hover {
   background-color: #f3f3f3;
+  transform: translateX(2px);
+}
+
+.dropdown-menu > a svg {
+  color: #666;
+  flex-shrink: 0;
+}
+
+/* Dropdown menu section headers */
+.dropdown-section-header {
+  font-size: 12px;
+  font-weight: bold;
+  color: #777;
+  padding: 8px 16px 4px;
+  margin-top: 8px;
+  border-top: 1px solid #eee;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Active Page Indicator Styles */
+.active-page {
+  position: relative;
+  font-weight: bold;
+  color: #111 !important;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.active-page::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 3px;
+  background-color: #111;
+  border-radius: 3px;
+}
+
+.dropdown-menu > a.active-page {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-menu > a.active-page::after {
+  bottom: -2px;
+  width: 20px;
+}
+
+/* Accessibility Focus Styles */
+:focus {
+  outline: 2px solid #4d90fe;
+  outline-offset: 2px;
+}
+
+/* Skip to content link for keyboard users */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #111;
+  color: white;
+  padding: 8px;
+  z-index: 9999;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Improve keyboard focus visibility */
+.dropdown-button:focus,
+.nav-btn:focus,
+.search-bar:focus,
+.search-btn:focus,
+.join-btn:focus,
+.hamburger:focus {
+  outline: 2px solid #4d90fe;
+  outline-offset: 2px;
 }
 
 /* Hamburger Style */
@@ -296,13 +412,13 @@ a {
 }
 
 #view-more-btn {
-  display:none; 
+  display:none;
   background-color: #111;
   color: white;
-  margin: 20px auto; 
-  padding: 10px 20px; 
+  margin: 20px auto;
+  padding: 10px 20px;
   border-radius: 8px;
-  font-size: 16px; 
+  font-size: 16px;
   font-weight: bold;
   white-space: nowrap;
   cursor: pointer;

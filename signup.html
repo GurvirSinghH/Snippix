@@ -3,8 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About - Snippix</title>
+  <title>Sign Up - Snippix</title>
   <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .main-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f8f8f8;
+      min-height: calc(100vh - 150px);
+      padding: 40px 0;
+    }
+
+    .signup-container {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .signup-container h2 {
+      margin-bottom: 20px;
+      color: #111;
+    }
+
+    .signup-container input {
+      width: 100%;
+      padding: 12px 14px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background-color: #f3f3f3;
+      font-size: 16px;
+    }
+
+    .signup-btn {
+      background-color: #111;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .signup-btn:hover {
+      background-color: #333;
+    }
+
+    .signup-container p {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .signup-container a {
+      color: #111;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .signup-container a:hover {
+      text-decoration: underline;
+    }
+
+
+
+  </style>
   <script src="./script/script.js" defer></script>
   <script src="./script/accessibility.js" defer></script>
 </head>
@@ -56,7 +127,7 @@
 
       <!-- Account Dropdown -->
       <div class="dropdown-container dropdown">
-        <div class="dropdown-button" tabindex="0" aria-haspopup="true" aria-expanded="false">
+        <div class="dropdown-button active-page" tabindex="0" aria-haspopup="true" aria-expanded="false">
           Account
           <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path d="M6 9l6 6 6-6"/>
@@ -71,7 +142,7 @@
             </svg>
             Login
           </a>
-          <a href="signup.html" role="menuitem">
+          <a href="signup.html" class="active-page" role="menuitem">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
               <circle cx="8.5" cy="7" r="4"/>
@@ -85,7 +156,7 @@
 
       <!-- Resources Dropdown -->
       <div class="dropdown-container dropdown">
-        <div class="dropdown-button active-page" tabindex="0" aria-haspopup="true" aria-expanded="false">
+        <div class="dropdown-button" tabindex="0" aria-haspopup="true" aria-expanded="false">
           Resources
           <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path d="M6 9l6 6 6-6"/>
@@ -127,7 +198,7 @@
             </svg>
             Help Center
           </a>
-          <a href="about.html" class="active-page" role="menuitem">
+          <a href="about.html" role="menuitem">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <circle cx="12" cy="12" r="10"/>
               <line x1="12" y1="16" x2="12" y2="12"/>
@@ -155,24 +226,23 @@
     <div class="nav-actions">
       <input class="search-bar" type="text" placeholder="Search for free photos or videos" aria-label="Search for free photos or videos" />
       <button class="search-btn" aria-label="Search">Search</button>
-      <a href="signup.html"><button class="join-btn" aria-label="Join Snippix">Join</button></a>
+      <a href="signup.html"><button class="join-btn active-page" aria-label="Join Snippix">Join</button></a>
     </div>
   </nav>
 
-  <!-- About Content -->
-  <section id="main-content" class="hero">
-    <h1>About Snippix</h1>
-    <p>Learn more about our mission and the people behind Snippix.</p>
-  </section>
-
-  <section class="gallery" style="max-width: 900px; margin: auto;">
-    <div style="text-align: left;">
-      <p><strong>Snippix</strong> is a free platform dedicated to helping creatives, developers, and designers access high-quality photos and videos for personal and commercial use.</p>
-      <p>We curate content from talented photographers and videographers and make it available without cost, licensing hurdles, or watermark restrictions.</p>
-      <p>Snippix is powered by the Pexels API and is continuously evolving to improve search, categorization, and user experience.</p>
-      <p>Our mission is to empower creators by removing barriers to high-quality visuals.</p>
+  <div id="main-content" class="main-content">
+    <div class="signup-container">
+      <h2>Create Your Snippix Account</h2>
+      <form>
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <input type="password" placeholder="Confirm Password" required />
+        <button type="submit" class="signup-btn">Sign Up</button>
+      </form>
+      <p>Already have an account? <a href="login.html">Login</a></p>
     </div>
-  </section>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">

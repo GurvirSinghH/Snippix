@@ -6,6 +6,7 @@
   <title>Explore - Snippix</title>
   <link rel="stylesheet" href="./css/style.css">
   <script src="./script/explore.js" defer></script>
+  <script src="./script/accessibility.js" defer></script>
   <style>
     body {
       margin: 0;
@@ -75,69 +76,164 @@
   </style>
 </head>
 <body>
-  <nav id="navbar" class="navbar">
-    <a href="index.html"><div class="logo" style="color: #111;">Snippix</div></a>
+  <!-- Skip to content link for keyboard users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav id="navbar" class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" aria-label="Snippix Home"><div class="logo" style="color: #111;">Snippix</div></a>
 
     <!-- Hamburger Icon (Visible on Small Screens) -->
-    <div class="hamburger" onclick="toggleMenu()">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <div class="hamburger" role="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links" tabindex="0">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
         <path d="M3 12h18M3 6h18M3 18h18"/>
       </svg>
     </div>
 
     <!-- Main Navigation Items -->
-    <div class="nav-links">
+    <div class="nav-links" id="nav-links">
+      <!-- Home Link -->
+      <a class="nav-btn" href="index.html" aria-label="Home page">Home</a>
+
+      <!-- Media Dropdown -->
       <div class="dropdown-container dropdown">
-        <div class="dropdown-button">
-          <img src="https://img.icons8.com/ios-glyphs/30/image.png" alt="Photos Icon" class="pimg"/>
-          Photos
+        <div class="dropdown-button active-page" tabindex="0" aria-haspopup="true" aria-expanded="false">
+          <img src="https://img.icons8.com/ios-glyphs/30/image.png" alt="Media Icon" class="pimg"/>
+          Media
+          <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
         </div>
-        <div class="dropdown-menu">
-          <a href="explore.html"><strong>Photos</strong></a>
-          <a href="video.html">Videos</a>
+        <div class="dropdown-menu" role="menu">
+          <a href="explore.html" class="active-page" role="menuitem">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M4 5h16M4 12h16M4 19h16"/>
+            </svg>
+            Photos Gallery
+          </a>
+          <a href="video.html" role="menuitem">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M23 7l-7 5 7 5V7z"/>
+              <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+            </svg>
+            Videos Collection
+          </a>
         </div>
       </div>
 
+      <!-- Account Dropdown -->
       <div class="dropdown-container dropdown">
-        <div class="dropdown-button">Explore</div>
-        <div class="dropdown-menu">
-          <a href="explore.html">Discover Photos</a>
-          <a href="video.html">Free Videos</a>
-          <a href="#">Challenges</a>
+        <div class="dropdown-button" tabindex="0" aria-haspopup="true" aria-expanded="false">
+          Account
+          <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </div>
+        <div class="dropdown-menu" role="menu">
+          <a href="login.html" role="menuitem">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+              <polyline points="10 17 15 12 10 7"/>
+              <line x1="15" y1="12" x2="3" y2="12"/>
+            </svg>
+            Login
+          </a>
+          <a href="signup.html" role="menuitem">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="8.5" cy="7" r="4"/>
+              <line x1="20" y1="8" x2="20" y2="14"/>
+              <line x1="23" y1="11" x2="17" y2="11"/>
+            </svg>
+            Sign Up
+          </a>
         </div>
       </div>
 
-      <a class="nav-btn dropdown" href="licence.html"><span>License</span></a>
-
+      <!-- Resources Dropdown -->
       <div class="dropdown-container dropdown">
-        <div class="dropdown-button">
-          <span class="ellipsis dropdown">•••</span>
+        <div class="dropdown-button" tabindex="0" aria-haspopup="true" aria-expanded="false">
+          Resources
+          <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
         </div>
-        <div class="dropdown-menu">
-          <a href="help.html">Help</a>
-          <a href="about.html">About</a>
-          <a href="feedback.html">Feedback</a>
+        <div class="dropdown-menu" role="menu">
+          <div class="dropdown-section-header">Legal</div>
+          <a href="licence.html" role="menuitem">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+            License
+          </a>
+          <a href="terms.html" role="menuitem">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10 9 9 9 8 9"/>
+            </svg>
+            Terms of Service
+          </a>
+          <a href="privacy.html" role="menuitem">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            Privacy Policy
+          </a>
+
+          <div class="dropdown-section-header">Support</div>
+          <a href="help.html" role="menuitem">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+            Help Center
+          </a>
+          <a href="about.html" role="menuitem">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="16" x2="12" y2="12"/>
+              <line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+            About Us
+          </a>
+          <a href="feedback.html" role="menuitem">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            Feedback
+          </a>
+          <a href="contact.html" role="menuitem">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            Contact Us
+          </a>
         </div>
       </div>
     </div>
 
     <div class="nav-actions">
-      <input class="search-bar" type="text" placeholder="Search for free photos or videos" />
-      <button class="search-btn">Search</button>
-      <a href="sugnup.html"><button class="join-btn">Join</button></a>
+      <input class="search-bar" type="text" placeholder="Search for free photos or videos" aria-label="Search for free photos or videos" />
+      <button class="search-btn" aria-label="Search">Search</button>
+      <a href="signup.html"><button class="join-btn" aria-label="Join Snippix">Join</button></a>
     </div>
 
   </nav>
 
-  <div class="explore-header">
-
+  <div id="main-content" class="explore-header">
     <h1>Explore Snippix</h1>
     <p>Browse trending free photos powered by Pexels</p>
   </div>
 
-  <div class="explore-grid" id="explore-grid"></div>
+  <div class="explore-grid" id="explore-grid" role="region" aria-label="Photo gallery"></div>
 
-  <button class="next-btn" id="next-btn">Next</button>
+  <button class="next-btn" id="next-btn" aria-label="Load more photos">Next</button>
 
   <!-- Footer -->
   <footer class="footer">

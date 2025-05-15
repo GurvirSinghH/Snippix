@@ -26,16 +26,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function displayPhotos(photos) {
-      photos.forEach(photo => {
+      photos.forEach((photo, index) => {
         const link = document.createElement('a');
         link.href = photo.url;
         link.target = '_blank';
+        link.setAttribute('role', 'link');
+        link.setAttribute('aria-label', `Photo by ${photo.photographer}`);
+        link.setAttribute('tabindex', '0');
+
+        // Add keyboard support for the link
+        link.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            window.open(photo.url, '_blank');
+          }
+        });
 
         const img = document.createElement('img');
         img.src = photo.src.large;
-        img.alt = photo.photographer;
+        img.alt = `Photo by ${photo.photographer}: ${photo.alt || 'No description available'}`;
+        img.setAttribute('loading', 'lazy');
+
+        // Add photographer credit as a caption
+        const caption = document.createElement('div');
+        caption.className = 'photo-caption';
+        caption.textContent = `By: ${photo.photographer}`;
+        caption.style.fontSize = '12px';
+        caption.style.padding = '5px';
+        caption.style.textAlign = 'center';
 
         link.appendChild(img);
+        link.appendChild(caption);
         grid.appendChild(link);
       });
     }

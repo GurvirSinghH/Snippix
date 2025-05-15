@@ -1,0 +1,90 @@
+<!-- This is a template for accessibility improvements to be applied to all pages -->
+
+<!-- 1. Add accessibility.js script -->
+<script src="./script/accessibility.js" defer></script>
+
+<!-- 2. Add skip link -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- 3. Add ARIA attributes to navigation -->
+<nav id="navbar" class="navbar" role="navigation" aria-label="Main navigation">
+  <a href="index.html" aria-label="Snippix Home"><div class="logo" style="color: #111;">Snippix</div></a>
+
+  <!-- Hamburger Icon (Visible on Small Screens) -->
+  <div class="hamburger" role="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links" tabindex="0">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M3 12h18M3 6h18M3 18h18"/>
+    </svg>
+  </div>
+
+  <!-- Main Navigation Items -->
+  <div class="nav-links" id="nav-links">
+    <div class="dropdown-container dropdown">
+      <div class="dropdown-button" tabindex="0" aria-haspopup="true" aria-expanded="false">
+        <img src="https://img.icons8.com/ios-glyphs/30/image.png" alt="Photos Icon" class="pimg"/>
+        Photos
+      </div>
+      <div class="dropdown-menu" role="menu">
+        <a href="explore.html" role="menuitem">Photos</a>
+        <a href="video.html" role="menuitem">Videos</a>
+      </div>
+    </div>
+
+    <div class="dropdown-container dropdown">
+      <div class="dropdown-button" tabindex="0" aria-haspopup="true" aria-expanded="false">Explore</div>
+      <div class="dropdown-menu" role="menu">
+        <a href="explore.html" role="menuitem">Discover Photos</a>
+        <a href="video.html" role="menuitem">Free Videos</a>
+        <a href="#" role="menuitem">Challenges</a>
+      </div>
+    </div>
+
+    <a class="nav-btn dropdown" href="licence.html" aria-label="License information">License</a>
+
+    <div class="dropdown-container dropdown">
+      <div class="dropdown-button" tabindex="0" aria-haspopup="true" aria-expanded="false">
+        <span class="ellipsis dropdown" aria-label="More options">•••</span>
+      </div>
+      <div class="dropdown-menu" role="menu">
+        <a href="help.html" role="menuitem">Help</a>
+        <a href="about.html" role="menuitem">About</a>
+        <a href="feedback.html" role="menuitem">Feedback</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-actions">
+    <input class="search-bar" type="text" placeholder="Search for free photos or videos" aria-label="Search for free photos or videos" />
+    <button class="search-btn" aria-label="Search">Search</button>
+    <a href="signup.html"><button class="join-btn" aria-label="Join Snippix">Join</button></a>
+  </div>
+</nav>
+
+<!-- 4. Add main-content ID to the main content section -->
+<section id="main-content" class="hero">
+  <!-- Main content here -->
+</section>
+
+<!-- 5. Add ARIA labels to interactive elements -->
+<button aria-label="Descriptive label">Button text</button>
+<input type="text" aria-label="Descriptive label" />
+
+<!-- 6. Add ARIA roles to structural elements -->
+<div role="region" aria-label="Descriptive label">
+  <!-- Content here -->
+</div>
+
+<!-- 7. Add ARIA labels to links -->
+<a href="#" aria-label="Descriptive label">Link text</a>
+
+<!-- 8. Add ARIA labels to images -->
+<img src="image.jpg" alt="Descriptive alt text" />
+
+<!-- 9. Add ARIA labels to form elements -->
+<form aria-label="Form description">
+  <label for="name">Name:</label>
+  <input type="text" id="name" aria-required="true" />
+</form>
+
+<!-- 10. Add ARIA labels to buttons -->
+<button aria-label="Close" aria-pressed="false">X</button>
